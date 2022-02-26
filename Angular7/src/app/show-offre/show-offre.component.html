@@ -19,6 +19,7 @@
 	</mat-card>
 	<div *ngIf="uService.roleMatch(['Candidat'])">
 <div *ngIf="userDetails">
+	<mat-card>
 
 	 <form class="example-form" [formGroup]="Pservice.formModel" autocomplete="off" (submit)="Postuler(offre.idOffre,userDetails.fullName,userDetails.email)">
         
@@ -57,6 +58,7 @@
 
         <button type="submit" mat-raised-button color="primary">Postuler</button>
       </form>
+	</mat-card>
 	  </div>
 
 	</div>

@@ -86,8 +86,8 @@ onEdit(d){
 openDialog(id) {
 
   const dialogRef =  this.dialog.open(ShowOffreComponent, {
-    //width: '50%',
-    height: '50%',
+    width: '20%',
+    height: '90%',
     data: { offreId: id}
   });
   dialogRef.afterClosed().subscribe(result => {

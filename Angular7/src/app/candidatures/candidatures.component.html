@@ -21,6 +21,7 @@
 						<th>Connaissance Linguistique</th>
 						<th>status</th>
 						<th>offre</th>
+						<th>file</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -36,6 +37,9 @@
 						<td>{{candidature.connaissanceLinguistique}}</td>
 						<td>{{candidature.status}}</td>
 						<td>{{candidature.offre}}</td>
+						<td><img [src]="createImgPath(candidature.image)" alt="profile picture" class="card-img-top" width="250" height="300">
+						<app-download></app-download>
+						</td>
 						<td>
 
 							<!-- Example single danger button -->

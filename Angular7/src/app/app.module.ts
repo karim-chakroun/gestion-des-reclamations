@@ -36,6 +36,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatIconModule} from '@angular/material/icon';
 import { HomedcComponent } from './homedc/homedc.component';
+import { DownloadComponent } from './download/download.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { HomedcComponent } from './homedc/homedc.component';
     CandidaturesComponent,
     UploadComponent,
     DashboardComponent,
-    HomedcComponent
+    HomedcComponent,
+    DownloadComponent
   ],
   imports: [
     MatSnackBarModule,

@@ -59,5 +59,9 @@ export class CandidaturesComponent implements OnInit {
     );
   }
 
+  public createImgPath = (serverPath: string) => {
+    return `https://localhost:44319/${serverPath}`;
+  }
+
 
 }

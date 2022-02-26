@@ -1,6 +1,7 @@
 <app-header></app-header>
 <app-dashboard></app-dashboard>
 <div class="container">
+	<div class="card">
 
 
 	<div class="row" *ngIf="uService.roleMatch(['Recruteur'])">
@@ -69,6 +70,7 @@
 		</div>
 
 	</div>
+</div>
 	<div class="row" *ngIf="uService.roleMatch(['Candidat'])">
 		<div class="col-4" *ngFor="let offre of offreDetalis">
 			
@@ -82,7 +84,7 @@
           	
 				</mat-card-content>
 				<mat-card-actions>
-					<button mat-button>LIKE</button>
+					
           	<button mat-raised-button color="primary" (click)="openDialog(offre.idOffre)">Postuler</button>
 				</mat-card-actions>
 			</mat-card>
