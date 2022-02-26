@@ -1,0 +1,61 @@
+<nav *ngIf="service.roleMatch(['Recruteur'])" class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/nav">
+          <span data-feather="home"></span>
+          Tableau de board <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">
+          <span data-feather="shopping-cart"></span>
+          <mat-icon>home</mat-icon>
+          Home
+
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/candidatures">
+          <span data-feather="shopping-cart"></span>
+          <mat-icon>work</mat-icon>
+          Candidatures
+
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/profil">
+          <span data-feather="users"></span>
+          <mat-icon>person</mat-icon>
+          Profil
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/offre">
+          <span data-feather="layers"></span>
+          <mat-icon> local_offer</mat-icon>
+          offre
+        </a>
+      </li>
+    </ul>
+
+
+    <ul class="nav flex-column mb-2">
+
+
+
+      <li class="nav-item">
+        <a class="nav-link" (click)="onLogout()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span data-feather="file-text"></span>
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</nav>

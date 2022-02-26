@@ -1,0 +1,91 @@
+<app-header></app-header>
+<app-dashboard></app-dashboard>
+<div class="container">
+
+
+	<div class="row" *ngIf="uService.roleMatch(['Recruteur'])">
+		<div class="col-1"></div>
+		<div class="col">
+			<button mat-raised-button color="primary" (click)="ajouterDialog()">Ajouter une offre</button>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Titre</th>
+						<th>Description</th>
+
+						<th>Salaire</th>
+						<th>DatePub</th>
+						<th>Supprimer</th>
+						<th>Modifier</th>
+						<th>Afficher</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let offre of offreDetalis">
+						<td>{{offre.titre}}</td>
+						<td>{{offre.description}}</td>
+						<td>{{offre.salaire}}</td>
+						<td>{{offre.datePub}}</td>
+						<td>
+							<button mat-raised-button color="primary" (click)="onDelete(offre.idOffre)">Supprimer</button>
+						</td>
+						<td>
+							<button mat-raised-button color="primary" (click)="openDialog(offre.idOffre)">Afficher</button>
+						</td>
+						<td>
+							<button mat-raised-button color="primary" (click)="onSubmit2(offre.idOffre)">Modifier</button>
+						</td>
+
+
+					</tr>
+				</tbody>
+
+			</table>
+
+		</div>
+		<div class="col">
+			<div *ngIf="offresbyid2">
+				<form [formGroup]="service.formModel" (submit)="onEdit(offresbyid2.idOffre)">
+					<div class="mb-3">
+						<label class="form-label">Titre</label>
+						<input type="text" value="{{offresbyid2.titre}}" class="form-control" formcontrolname="Titre">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Salaire</label>
+						<input type="number" value="{{offresbyid2.salaire}}" class="form-control" formcontrolname="Salaire">
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Description</label>
+						<textarea class="form-control" rows="3" value="{{offresbyid2.description}}" formcontrolname="Description"></textarea>
+					</div>
+
+
+					<div class="col-auto">
+						<button mat-raised-button color="primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<div class="row" *ngIf="uService.roleMatch(['Candidat'])">
+		<div class="col-4" *ngFor="let offre of offreDetalis">
+			
+			<mat-card class="example-card">
+				<mat-card-title>{{offre.titre}} </mat-card-title>
+        <p class="font-weight-light">{{offre.datePub}}</p>
+
+				<mat-card-content>
+					<p> {{offre.description}}</p>
+					<p>{{offre.salaire}}</p>
+          	
+				</mat-card-content>
+				<mat-card-actions>
+					<button mat-button>LIKE</button>
+          	<button mat-raised-button color="primary" (click)="openDialog(offre.idOffre)">Postuler</button>
+				</mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+</div>
